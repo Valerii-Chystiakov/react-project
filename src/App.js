@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      helpText: 'Help mee!!'
+      helpText: 'Help mee!!',
+      userData: ''
     }
 
     this.inputClick = this.inputClick.bind(this)
@@ -17,8 +18,9 @@ class App extends React.Component {
     return (<div className="name">
     <Header />
     <h1>{this.state.helpText}</h1>
+    <h2>{this.state.userData}</h2>
     <p>Hi</p>
-    <input placeholder={this.state.helpText} onClick={this.inputClick}/>
+    <input placeholder={this.state.helpText} onClick={this.inputClick} onChange={event=> this.setState({userData: event.target.value})}/>
     <br/>
     <img src={photo} alt={this.state.helpText} onClick={this.inputClick}/>
     <Footer />
