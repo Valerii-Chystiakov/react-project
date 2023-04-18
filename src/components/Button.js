@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Button = (props) => {
+    const [click, setClick] = useState(0)
     return(
-        <button>{props.text}</button>
+        <button onClick={() => setClick(click + 1)}>{props.text}{click}</button>
     )
 }
 
